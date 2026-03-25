@@ -12,24 +12,18 @@ class Solution {
                       st.push(2*st.peek());
                       break;
                     case "+":
-                      int a = st.pop();
-                      int b = st.peek();
-                      int sum = a + b;
+                      int a=st.pop();
+                      int b=st.peek();
+                      int sum=a+b;
                       st.push(a);
                       st.push(sum);
-                      break;
-                }
-
-            }
+                      break;   }  }
             else{
-                st.push(Integer.parseInt(operations[i]));
-            }
-        }
+                st.push(Integer.parseInt(operations[i]));    }  }
         int total=0;
         while(!st.isEmpty()){
             total=total+st.pop();
         }
-        return total;
-        
+        return total; 
     }
 }
