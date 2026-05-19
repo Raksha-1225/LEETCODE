@@ -6,7 +6,7 @@ class MinStack {
         mst=new Stack<>();
         
     }
-    
+
     public void push(int val) {
         st.push(val);
         if(mst.isEmpty()||val<=mst.peek()){
