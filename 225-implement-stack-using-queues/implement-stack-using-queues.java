@@ -1,10 +1,8 @@
 class MyStack {
     Queue<Integer> q;
-
     public MyStack() {
         q=new LinkedList<>();
     }
-    
     public void push(int x) {
         q.offer(x);
         int i=0;
@@ -12,19 +10,15 @@ class MyStack {
             q.offer(q.poll());
             i++;
         }
-        
     }
-    
     public int pop() {
         return q.poll();
         
     }
-    
     public int top() {
         return q.peek();
         
     }
-    
     public boolean empty() {
         return q.isEmpty();
         
