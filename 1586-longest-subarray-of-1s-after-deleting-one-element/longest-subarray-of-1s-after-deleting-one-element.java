@@ -12,7 +12,7 @@ class Solution {
                 if(nums[r]==0){
                     zc++;
                 }
-                if(zc==0){
+                if(zc==1){
                     ct++;
                 }
                 else{
