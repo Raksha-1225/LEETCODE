@@ -14,20 +14,17 @@ class Solution {
             return head;
         }
         ListNode odd=head;
-        ListNode even=odd.next;
-        ListNode evenhead=even;
+        ListNode even=head.next;
+        ListNode evenHead=even;
         while(even!=null&&even.next!=null){
             odd.next=even.next;
-            odd=odd.next;
+            odd=even.next;
             even.next=odd.next;
-            even=even.next;
+            even=odd.next;
+
         }
-        odd.next=evenhead;
+        odd.next=evenHead;
         return head;
-
-
-
-
         
     }
 }
