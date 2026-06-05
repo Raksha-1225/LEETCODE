@@ -10,42 +10,38 @@
  */
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        if(lists==null||lists.length==0){
+        if(lists.length==0){
             return null;
         }
-        int n=lists.length;
-        while(n>1){
-            int i=0,j=n-1;
-            while(i<j){
-                lists[i]=merge(lists[i],lists[j]);
-                i++;
-                j--;
-            }
-            n=(n+1)/2;
+        ListNode res=lists[0];
+        for(int i=1;i<lists.length;i++){
+            res=merge(res,lists[i]);
         }
-        return lists[0];
+        return res;
+        
     }
-
     public ListNode merge(ListNode l1,ListNode l2){
         ListNode dummy=new ListNode(0);
-        ListNode tail=dummy;
+        ListNode temp=dummy;
         while(l1!=null&&l2!=null){
             if(l1.val<l2.val){
-                tail.next=l1;
+                temp.next=l1;
                 l1=l1.next;
             }
             else{
-                tail.next=l2;
+                temp.next=l2;
                 l2=l2.next;
             }
-            tail=tail.next;
+            temp=temp.next;
         }
         if(l1!=null){
-            tail.next=l1;
+            temp.next=l1;
+            l1=l1.next;
         }
-        else{
-            tail.next=l2;
-            }
-            return dummy.next;
+        if(l2!=null){
+            temp.next=l2;
+            l2=l2.next;
+        }
+        return dummy.next;
     }
 }
