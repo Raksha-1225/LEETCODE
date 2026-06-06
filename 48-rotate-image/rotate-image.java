@@ -9,11 +9,15 @@ class Solution {
             }
         }
         for(int i=0;i<matrix.length;i++){
-            for(int j=0;j<matrix.length/2;j++){
-                int temp=matrix[i][j];
-                matrix[i][j]=matrix[i][n-j-1];
-                matrix[i][n-j-1]=temp;
-            }
+           int l=0;
+           int r=matrix.length-1;
+           while(l<r){
+            int temp=matrix[i][l];
+            matrix[i][l]=matrix[i][r];
+            matrix[i][r]=temp;
+            l++;
+            r--;
+           }
         }
 
         
